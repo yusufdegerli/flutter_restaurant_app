@@ -61,6 +61,10 @@
             <meta-data
                 android:name="io.flutter.embedding.android.NormalTheme"
                 android:resource="@style/NormalTheme" />
+            <!-- Flutter Surface Texture Mode (Disables SurfaceTexture if false) -->
+            <meta-data
+                android:name="io.flutter.embedding.android.SurfaceTextureMode"
+                android:value="false" />
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

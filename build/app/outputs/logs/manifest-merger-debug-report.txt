@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 application
-INJECTED from Y:\sambapos_app_restorant\android\app\src\main\AndroidManifest.xml:2:5-34:19
+INJECTED from Y:\sambapos_app_restorant\android\app\src\main\AndroidManifest.xml:2:5-38:19
 INJECTED from Y:\sambapos_app_restorant\android\app\src\debug\AndroidManifest.xml
 MERGED from [androidx.window:window:1.2.0] C:\Users\yusuf\.gradle\caches\8.10.2\transforms\19f7944fa2fdb887826e5aecf9ecdf2f\transformed\jetified-window-1.2.0\AndroidManifest.xml:22:5-29:19
 MERGED from [androidx.window:window:1.2.0] C:\Users\yusuf\.gradle\caches\8.10.2\transforms\19f7944fa2fdb887826e5aecf9ecdf2f\transformed\jetified-window-1.2.0\AndroidManifest.xml:22:5-29:19
@@ -21,8 +21,8 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\yu
 	android:name
 		INJECTED from Y:\sambapos_app_restorant\android\app\src\main\AndroidManifest.xml
 manifest
-ADDED from Y:\sambapos_app_restorant\android\app\src\main\AndroidManifest.xml:1:1-46:12
-MERGED from Y:\sambapos_app_restorant\android\app\src\main\AndroidManifest.xml:1:1-46:12
+ADDED from Y:\sambapos_app_restorant\android\app\src\main\AndroidManifest.xml:1:1-50:12
+MERGED from Y:\sambapos_app_restorant\android\app\src\main\AndroidManifest.xml:1:1-50:12
 INJECTED from Y:\sambapos_app_restorant\android\app\src\debug\AndroidManifest.xml:1:1-7:12
 INJECTED from Y:\sambapos_app_restorant\android\app\src\debug\AndroidManifest.xml:1:1-7:12
 INJECTED from Y:\sambapos_app_restorant\android\app\src\debug\AndroidManifest.xml:1:1-7:12
@@ -61,17 +61,17 @@ MERGED from [com.getkeepsafe.relinker:relinker:1.4.5] C:\Users\yusuf\.gradle\cac
 	xmlns:android
 		ADDED from Y:\sambapos_app_restorant\android\app\src\main\AndroidManifest.xml:1:11-69
 queries
-ADDED from Y:\sambapos_app_restorant\android\app\src\main\AndroidManifest.xml:40:5-45:15
+ADDED from Y:\sambapos_app_restorant\android\app\src\main\AndroidManifest.xml:44:5-49:15
 intent#action:name:android.intent.action.PROCESS_TEXT+data:mimeType:text/plain
-ADDED from Y:\sambapos_app_restorant\android\app\src\main\AndroidManifest.xml:41:9-44:18
+ADDED from Y:\sambapos_app_restorant\android\app\src\main\AndroidManifest.xml:45:9-48:18
 action#android.intent.action.PROCESS_TEXT
-ADDED from Y:\sambapos_app_restorant\android\app\src\main\AndroidManifest.xml:42:13-72
+ADDED from Y:\sambapos_app_restorant\android\app\src\main\AndroidManifest.xml:46:13-72
 	android:name
-		ADDED from Y:\sambapos_app_restorant\android\app\src\main\AndroidManifest.xml:42:21-70
+		ADDED from Y:\sambapos_app_restorant\android\app\src\main\AndroidManifest.xml:46:21-70
 data
-ADDED from Y:\sambapos_app_restorant\android\app\src\main\AndroidManifest.xml:43:13-50
+ADDED from Y:\sambapos_app_restorant\android\app\src\main\AndroidManifest.xml:47:13-50
 	android:mimeType
-		ADDED from Y:\sambapos_app_restorant\android\app\src\main\AndroidManifest.xml:43:19-48
+		ADDED from Y:\sambapos_app_restorant\android\app\src\main\AndroidManifest.xml:47:19-48
 uses-permission#android.permission.INTERNET
 ADDED from Y:\sambapos_app_restorant\android\app\src\debug\AndroidManifest.xml:6:5-66
 	android:name

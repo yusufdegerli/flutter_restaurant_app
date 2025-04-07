@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:sambapos_app_restorant/providers/order_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:sambapos_app_restorant/providers/auth_provider.dart';
+import 'package:sambapos_app_restorant/providers/order_provider.dart';
+import '../models/menu_item.dart';
+import '../services/order_service.dart';
 
 class PaymentScreen extends StatefulWidget {
   final String tableNumber;
   final double totalAmount;
+  final List<MenuItem> selectedItems;
 
   const PaymentScreen({
     Key? key,
     required this.tableNumber,
     required this.totalAmount,
+    required this.selectedItems,
   }) : super(key: key);
 
   @override
@@ -18,6 +23,8 @@ class PaymentScreen extends StatefulWidget {
 
 class _PaymentScreenState extends State<PaymentScreen> {
   final TextEditingController _noteController = TextEditingController();
+  //final OrderService _orderService = OrderService();
+  bool _isLoading = false;
 
   @override
   void dispose() {
@@ -27,6 +34,9 @@ class _PaymentScreenState extends State<PaymentScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final authProvider = Provider.of<AuthProvider>(context, listen: false);
+    final orderProvider = Provider.of<OrderProvider>(context, listen: false);
+
     return Scaffold(
       appBar: AppBar(title: Text("Ödeme - ${widget.tableNumber}")),
       body: Padding(
@@ -59,20 +69,39 @@ class _PaymentScreenState extends State<PaymentScreen> {
             ),
             SizedBox(height: 30),
             ElevatedButton(
-              onPressed: () {
-                final orderProvider = Provider.of<OrderProvider>(
-                  context,
-                  listen: false,
-                );
-                // Notu siparişle birlikte kaydet
-                orderProvider.updateOrder(
-                  widget.tableNumber,
-                  [],
-                  note: _noteController.text,
-                );
-                Navigator.popUntil(context, (route) => route.isFirst);
+              onPressed: () async {
+                setState(() => _isLoading = true);
+                try {
+                  final userName = authProvider.userName ?? 'Bilinmiyor';
+                  final userId = authProvider.userId?.toString() ?? '0';
+
+                  await orderProvider.completeOrderWithApi(
+                    tableNumber: widget.tableNumber,
+                    items: widget.selectedItems,
+                    note: _noteController.text,
+                    userName: userName,
+                    userId: userId,
+                    totalAmount: widget.totalAmount,
+                  );
+
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text("Sipariş başarıyla gönderildi!"),
+                    ),
+                  );
+                  Navigator.popUntil(context, (route) => route.isFirst);
+                } catch (e) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text("Hata: ${e.toString()}")),
+                  );
+                } finally {
+                  setState(() => _isLoading = false);
+                }
               },
-              child: Text("Siparişi Tamamla"),
+              child:
+                  _isLoading
+                      ? const CircularProgressIndicator(color: Colors.white)
+                      : const Text("Siparişi Tamamla"),
             ),
             SizedBox(height: 20),
             ElevatedButton(

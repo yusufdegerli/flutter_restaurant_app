@@ -25,21 +25,21 @@ class _LoginScreenState extends State<LoginScreen> {
     final authProvider = Provider.of<AuthProvider>(context, listen: false);
 
     try {
-      // Yükleme göster
+      // Show loading dialog
       showDialog(
         context: context,
         barrierDismissible: false,
         builder: (context) => const Center(child: CircularProgressIndicator()),
       );
 
-      // API'den kullanıcı bilgilerini al
+      // Fetch user data from API
       final response = await http.get(
         Uri.parse(
           '${ApiService.baseUrl}/api/User?name=${_usernameController.text}',
         ),
       );
 
-      // Dialog'u kapat
+      // Close loading dialog
       Navigator.pop(context);
 
       if (response.statusCode == 200) {
@@ -57,18 +57,33 @@ class _LoginScreenState extends State<LoginScreen> {
         print(
           "API'den Gelen İlk Kullanıcı: ${users[0]['name']}, Pin: ${users[0]['pinCode']}",
         );
+        print("MATCHED USER: ${matchedUser}");
         if (matchedUser != null) {
-          authProvider.login(matchedUser['UserRole_Id'] as int);
+          print("matchedUser: $matchedUser");
+          final userId = int.parse(
+            matchedUser['id'].toString(),
+          ); // Convert to int
+          final roleId = int.parse(
+            matchedUser['userRole_Id'].toString(),
+          ); // Convert to int
+          final userName = matchedUser['name'] as String;
+          print("OOOOOOOOOOOOOOOOOOOOOOO: ${matchedUser}");
+          authProvider.login(userId, roleId, userName); // Pass all 3 arguments
           WidgetsBinding.instance.addPostFrameCallback((_) {
             if (mounted) {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const TableSelectionScreen(),
-                ),
+              print("ALSDFHASKLJDFALŞJGHFASKLDFHASKLHJF");
+              Navigator.of(context).pushAndRemoveUntil(
+                MaterialPageRoute(builder: (context) => TableSelectionScreen()),
+                (Route<dynamic> route) => false,
               );
             }
           });
+        } else {
+          scaffoldMessenger.showSnackBar(
+            const SnackBar(
+              content: Text("Kullanıcı adı veya pin kodu yanlış."),
+            ),
+          );
         }
       } else {
         scaffoldMessenger.showSnackBar(
