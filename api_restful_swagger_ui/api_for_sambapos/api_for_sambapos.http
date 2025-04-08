@@ -1,0 +1,6 @@
+@web_api_using_crud_with_swagger_HostAddress = http://localhost:5027
+
+GET {{web_api_using_crud_with_swagger_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

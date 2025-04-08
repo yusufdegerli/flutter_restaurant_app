@@ -1,0 +1,122 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\yusuf\\OneDrive\\Desktop\\api_for_sambapos\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{35C7F789-A3B7-4D11-B619-6A2B105FCEA7}|api_for_sambapos\\api_for_sambapos.csproj|c:\\users\\yusuf\\onedrive\\desktop\\api_for_sambapos\\api_for_sambapos\\migrations\\20250408093743_initialmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35C7F789-A3B7-4D11-B619-6A2B105FCEA7}|api_for_sambapos\\api_for_sambapos.csproj|solutionrelative:api_for_sambapos\\migrations\\20250408093743_initialmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35C7F789-A3B7-4D11-B619-6A2B105FCEA7}|api_for_sambapos\\api_for_sambapos.csproj|c:\\users\\yusuf\\onedrive\\desktop\\api_for_sambapos\\api_for_sambapos\\migrations\\appdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35C7F789-A3B7-4D11-B619-6A2B105FCEA7}|api_for_sambapos\\api_for_sambapos.csproj|solutionrelative:api_for_sambapos\\migrations\\appdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35C7F789-A3B7-4D11-B619-6A2B105FCEA7}|api_for_sambapos\\api_for_sambapos.csproj|c:\\users\\yusuf\\onedrive\\desktop\\api_for_sambapos\\api_for_sambapos\\models\\tickets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35C7F789-A3B7-4D11-B619-6A2B105FCEA7}|api_for_sambapos\\api_for_sambapos.csproj|solutionrelative:api_for_sambapos\\models\\tickets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35C7F789-A3B7-4D11-B619-6A2B105FCEA7}|api_for_sambapos\\api_for_sambapos.csproj|c:\\users\\yusuf\\onedrive\\desktop\\api_for_sambapos\\api_for_sambapos\\controllers\\ticketscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35C7F789-A3B7-4D11-B619-6A2B105FCEA7}|api_for_sambapos\\api_for_sambapos.csproj|solutionrelative:api_for_sambapos\\controllers\\ticketscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35C7F789-A3B7-4D11-B619-6A2B105FCEA7}|api_for_sambapos\\api_for_sambapos.csproj|c:\\users\\yusuf\\onedrive\\desktop\\api_for_sambapos\\api_for_sambapos\\models\\ticketdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35C7F789-A3B7-4D11-B619-6A2B105FCEA7}|api_for_sambapos\\api_for_sambapos.csproj|solutionrelative:api_for_sambapos\\models\\ticketdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35C7F789-A3B7-4D11-B619-6A2B105FCEA7}|api_for_sambapos\\api_for_sambapos.csproj|c:\\users\\yusuf\\onedrive\\desktop\\api_for_sambapos\\api_for_sambapos\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35C7F789-A3B7-4D11-B619-6A2B105FCEA7}|api_for_sambapos\\api_for_sambapos.csproj|solutionrelative:api_for_sambapos\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AppDbContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\yusuf\\OneDrive\\Desktop\\api_for_sambapos\\api_for_sambapos\\Migrations\\AppDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "api_for_sambapos\\Migrations\\AppDbContextModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\yusuf\\OneDrive\\Desktop\\api_for_sambapos\\api_for_sambapos\\Migrations\\AppDbContextModelSnapshot.cs",
+              "RelativeToolTip": "api_for_sambapos\\Migrations\\AppDbContextModelSnapshot.cs",
+              "ViewState": "AgIAAH8AAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T09:37:59.826Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "20250408093743_InitialMigration.cs",
+              "DocumentMoniker": "C:\\Users\\yusuf\\OneDrive\\Desktop\\api_for_sambapos\\api_for_sambapos\\Migrations\\20250408093743_InitialMigration.cs",
+              "RelativeDocumentMoniker": "api_for_sambapos\\Migrations\\20250408093743_InitialMigration.cs",
+              "ToolTip": "C:\\Users\\yusuf\\OneDrive\\Desktop\\api_for_sambapos\\api_for_sambapos\\Migrations\\20250408093743_InitialMigration.cs",
+              "RelativeToolTip": "api_for_sambapos\\Migrations\\20250408093743_InitialMigration.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAswBMAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T09:37:54.265Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\yusuf\\OneDrive\\Desktop\\api_for_sambapos\\api_for_sambapos\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "api_for_sambapos\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\yusuf\\OneDrive\\Desktop\\api_for_sambapos\\api_for_sambapos\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "api_for_sambapos\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABcAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T08:54:50.439Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TicketsController.cs",
+              "DocumentMoniker": "C:\\Users\\yusuf\\OneDrive\\Desktop\\api_for_sambapos\\api_for_sambapos\\Controllers\\TicketsController.cs",
+              "RelativeDocumentMoniker": "api_for_sambapos\\Controllers\\TicketsController.cs",
+              "ToolTip": "C:\\Users\\yusuf\\OneDrive\\Desktop\\api_for_sambapos\\api_for_sambapos\\Controllers\\TicketsController.cs",
+              "RelativeToolTip": "api_for_sambapos\\Controllers\\TicketsController.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAmwFYAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T08:48:19.187Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TicketDto.cs",
+              "DocumentMoniker": "C:\\Users\\yusuf\\OneDrive\\Desktop\\api_for_sambapos\\api_for_sambapos\\Models\\TicketDto.cs",
+              "RelativeDocumentMoniker": "api_for_sambapos\\Models\\TicketDto.cs",
+              "ToolTip": "C:\\Users\\yusuf\\OneDrive\\Desktop\\api_for_sambapos\\api_for_sambapos\\Models\\TicketDto.cs",
+              "RelativeToolTip": "api_for_sambapos\\Models\\TicketDto.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAwBYAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T08:46:49.607Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Tickets.cs",
+              "DocumentMoniker": "C:\\Users\\yusuf\\OneDrive\\Desktop\\api_for_sambapos\\api_for_sambapos\\Models\\Tickets.cs",
+              "RelativeDocumentMoniker": "api_for_sambapos\\Models\\Tickets.cs",
+              "ToolTip": "C:\\Users\\yusuf\\OneDrive\\Desktop\\api_for_sambapos\\api_for_sambapos\\Models\\Tickets.cs",
+              "RelativeToolTip": "api_for_sambapos\\Models\\Tickets.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAkwBcAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T08:38:03.558Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

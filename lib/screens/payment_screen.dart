@@ -78,16 +78,17 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   await orderProvider.completeOrderWithApi(
                     tableNumber: widget.tableNumber,
                     items: widget.selectedItems,
-                    note: _noteController.text,
+                    note:
+                        _noteController.text.isNotEmpty
+                            ? _noteController.text
+                            : "Not yok",
                     userName: userName,
                     userId: userId,
                     totalAmount: widget.totalAmount,
                   );
 
                   ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text("Sipariş başarıyla gönderildi!"),
-                    ),
+                    SnackBar(content: Text("Sipariş başarıyla gönderildi!")),
                   );
                   Navigator.popUntil(context, (route) => route.isFirst);
                 } catch (e) {
@@ -100,8 +101,8 @@ class _PaymentScreenState extends State<PaymentScreen> {
               },
               child:
                   _isLoading
-                      ? const CircularProgressIndicator(color: Colors.white)
-                      : const Text("Siparişi Tamamla"),
+                      ? CircularProgressIndicator()
+                      : Text("SİPARİŞİ TAMAMLA"),
             ),
             SizedBox(height: 20),
             ElevatedButton(

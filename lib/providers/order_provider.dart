@@ -8,6 +8,20 @@ class OrderProvider with ChangeNotifier {
   Map<String, String> _orderNotes = {};
   Map<String, String> _orderUserNames = {};
   Map<String, String> _orderUserIds = {};
+  String? _currentNote;
+  String? _currentTableNumber;
+  double? _currentTotalAmount;
+
+  void setCurrentOrder({
+    String? note,
+    String? tableNumber,
+    double? totalAmount,
+  }) {
+    _currentNote = note ?? "Not yok";
+    _currentTableNumber = tableNumber ?? "Masa yok";
+    _currentTotalAmount = totalAmount ?? 0.0;
+    notifyListeners();
+  }
 
   void completeOrder(
     String tableNumber,
@@ -84,7 +98,6 @@ class OrderProvider with ChangeNotifier {
     required double totalAmount,
   }) async {
     try {
-      //Ticket numarası içi garip bir trick
       final ticketNumber = DateTime.now().millisecondsSinceEpoch;
 
       final orderData = {
@@ -92,25 +105,24 @@ class OrderProvider with ChangeNotifier {
           "Id": 0,
           "Date": DateTime.now().toIso8601String(),
           "LastUpdateTime": DateTime.now().toIso8601String(),
-          "TicketNumber": ticketNumber.toString(), // String olarak gönder
+          "TicketNumber": ticketNumber.toString(),
           "DepartmentId": 1,
-          "LocationName": tableNumber, // Örn: "Masa 5"
+          "LocationName": tableNumber,
           "CustomerId": int.tryParse(userId) ?? 0,
           "CustomerName": userName,
-          "Note": note.isNotEmpty ? note : "Not Yok", // Boşsa varsayılan değer
+          "CustomersName": userName,
+          "Note": note.isNotEmpty ? note : "Not yok",
           "IsPaid": false,
           "TotalAmount": totalAmount,
           "RemainingAmount": totalAmount,
-          // Yeni eklenen zorunlu alanlar:
-          "Tag": "RestaurantOrder", // Backend'in beklediği bir değer olmalı
-          "Name": "Sipariş ${ticketNumber.toString()}", // Örn: "Sipariş 123456"
-          "CustomersName": userName, // "CustomerName" ile aynı olabilir
+          "Tag": "RestaurantOrder",
+          "Name": "Sipariş ${ticketNumber.toString()}",
         },
       };
 
       await ApiService.sendOrderToDatabase(orderData);
 
-      //Yerel state'i güncellemek
+      // Yerel state'i güncelle
       completeOrder(
         tableNumber,
         items,
