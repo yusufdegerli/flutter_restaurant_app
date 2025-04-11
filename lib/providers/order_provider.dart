@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:sambapos_app_restorant/services/api_service.dart';
 import '../models/menu_item.dart';
+import 'dart:convert';
 
 class OrderProvider with ChangeNotifier {
   Map<String, List<MenuItem>> _orders = {};
@@ -28,7 +29,7 @@ class OrderProvider with ChangeNotifier {
     List<MenuItem> items, {
     String note = '',
     required String userName,
-    required String userId, // String olarak alıyoruz
+    required String userId,
   }) {
     _orders[tableNumber] = items;
     _orderTimes[tableNumber] = DateTime.now();
@@ -88,7 +89,6 @@ class OrderProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  //Api'ye post yollama
   Future<void> completeOrderWithApi({
     required String tableNumber,
     required List<MenuItem> items,
@@ -103,22 +103,28 @@ class OrderProvider with ChangeNotifier {
       final orderData = {
         "ticketDto": {
           "Id": 0,
-          "Date": DateTime.now().toIso8601String(),
-          "LastUpdateTime": DateTime.now().toIso8601String(),
-          "TicketNumber": ticketNumber.toString(),
+          "Name": "Sipariş ${ticketNumber.toString()}",
           "DepartmentId": 1,
+          "LastUpdateTime": DateTime.now().toIso8601String(),
+          "TicketNumber": "TCKT-$ticketNumber",
+          "PrintJobData": "2:2#1:1",
+          "Date": DateTime.now().toIso8601String(),
+          "LastOrderDate": DateTime.now().toIso8601String(),
+          "LastPaymentDate": DateTime.now().toIso8601String(),
           "LocationName": tableNumber,
           "CustomerId": int.tryParse(userId) ?? 0,
           "CustomerName": userName,
-          "CustomersName": userName,
-          "Note": note.isNotEmpty ? note : "Not yok",
+          "CustomerGroupCode": "misafir",
           "IsPaid": false,
-          "TotalAmount": totalAmount,
-          "RemainingAmount": totalAmount,
+          "RemainingAmount": 23.5,
+          "TotalAmount": 123.5,
+          "Note": note.isNotEmpty ? note : "Not yok",
+          "Locked": false,
           "Tag": "RestaurantOrder",
-          "Name": "Sipariş ${ticketNumber.toString()}",
         },
       };
+
+      print("Gönderilen orderData: ${json.encode(orderData)}");
 
       await ApiService.sendOrderToDatabase(orderData);
 
@@ -131,7 +137,14 @@ class OrderProvider with ChangeNotifier {
         userId: userId,
       );
     } catch (e) {
-      throw Exception('Sipariş kaydedilemedi: $e');
+      // API'den gelen orijinal hata mesajını loglayalım
+      print("API Hata Detayı: $e");
+      String errorMessage = 'Sipariş kaydedilemedi: $e';
+      if (e.toString().contains('PrintJobData')) {
+        errorMessage =
+            'Sipariş kaydedilemedi: PrintJobData alanı eksik veya geçersiz. Detay: $e';
+      }
+      throw Exception(errorMessage);
     }
   }
 }
